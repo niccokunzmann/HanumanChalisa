@@ -29,8 +29,6 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.kobakei.ratethisapp.RateThisApp;
 import com.nandi.hanuman.chalisa.fragments.MainFragment;
 
 import java.io.IOException;
@@ -67,20 +65,14 @@ public class ShreeRamDutayaNamah extends BaseActivity implements MediaPlayer.OnP
     int maxCount = 1;
     int finalValue = 1;
 
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
         drawableID = MainFragment.MAHA_MRITYUNJAYA;
         mantraText = getResources().getString(R.string.my_mantra_new7);
-
-        RateThisApp.onCreate(this);
-        RateThisApp.showRateDialogIfNeeded(this);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);

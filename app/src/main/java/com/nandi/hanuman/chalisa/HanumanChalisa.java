@@ -34,11 +34,8 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.kobakei.ratethisapp.RateThisApp;
 import com.nandi.hanuman.chalisa.fragments.MainFragment;
 import com.nandi.hanuman.chalisa.fragments.SecondFragment;
-import com.tappx.sdk.android.TappxInterstitial;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -50,7 +47,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
     private ImageButton repeatButton;
     private ImageButton repeatButton1;
     private ImageButton repeatButton2;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     private SeekBar seekBar;
 
@@ -72,14 +68,11 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
     int maxCount = 1;
     int finalValue = 1;
 
-    TappxInterstitial tappxInterstitial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
-
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -88,12 +81,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         drawableID = MainFragment.HANUMAN_JI;
         mantraText = getResources().getString(R.string.my_mantra_new3);
 
-        tappxInterstitial = new TappxInterstitial(HanumanChalisa.this, "/120940746/Pub-29120-Android-4255");
-        tappxInterstitial.setAutoShowWhenReady(true);
-        tappxInterstitial.loadAd();
-
-        RateThisApp.onCreate(this);
-        RateThisApp.showRateDialogIfNeeded(this);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);
@@ -355,7 +342,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (tappxInterstitial != null) tappxInterstitial.destroy();
     }
 
 

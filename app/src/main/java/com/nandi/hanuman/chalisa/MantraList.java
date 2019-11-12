@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
  * RadhaKrishna
@@ -16,7 +15,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public class MantraList extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView list;
-    private FirebaseAnalytics mFirebaseAnalytics;
     String[] itemname = {
             "Hanuman Chalisa\nShri Hanuman Chalisa",
             "Marut Nandan Mantra\nMarut Nandan Namo Namah",
@@ -57,9 +55,6 @@ public class MantraList extends AppCompatActivity implements AdapterView.OnItemC
 
 
         setContentView(R.layout.mantra_list);
-
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
 
         //ListView listView = (ListView) findViewById(R.id.sites_list);
         //listView.setOnItemClickListener(this);
