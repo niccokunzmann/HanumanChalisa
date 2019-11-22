@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -29,7 +29,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
 
 import java.io.IOException;
 
@@ -401,7 +401,7 @@ public class OmHumHanumate extends BaseActivity implements MediaPlayer.OnPrepare
         if (item.getItemId() == R.id.action_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.nandi.hanuman.chalisa";
+            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.github.niccokunzmann.hanumanchalisa";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }

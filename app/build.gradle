@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.nandi.hanuman.chalisa"
+        applicationId "com.github.niccokunzmann.hanumanchalisa"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 6
@@ -24,7 +24,6 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }

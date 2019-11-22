@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -11,8 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
-import com.nandi.hanuman.chalisa.fragments.SecondFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.SecondFragment;
 
 /**
  * Created by RadhaKrishna on 10/19/2017.

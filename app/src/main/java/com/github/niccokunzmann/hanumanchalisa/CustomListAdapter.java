@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

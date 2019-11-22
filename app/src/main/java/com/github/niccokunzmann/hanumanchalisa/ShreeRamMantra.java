@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,7 +29,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
 
 import java.io.IOException;
 
@@ -36,7 +37,7 @@ import java.io.IOException;
  * RadhaKrishna
  */
 
-public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
+public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
     private ImageButton playButton;
     private ImageButton pauseButton;
     private ImageButton stopButton;
@@ -69,8 +70,9 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
 
-        drawableID = MainFragment.GAYATRI_MANTRA;
-        mantraText = getResources().getString(R.string.my_mantra_new2);
+
+        drawableID = MainFragment.KUBERA_JI;
+        mantraText = getResources().getString(R.string.my_mantra_new5);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);
@@ -89,7 +91,8 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
         flower5 = (ImageView) findViewById(R.id.flower5);
         flower6 = (ImageView) findViewById(R.id.flower6);
 
-        mSectionsPagerAdapter = new BaseActivity.SectionsPagerAdapter(getSupportFragmentManager());
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         tabs = (TabLayout) findViewById(R.id.tabs);
@@ -108,7 +111,7 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
         tabs.setupWithViewPager(mViewPager);
 //        animat();
 
-        player = MediaPlayer.create(OmMantra.this, R.raw.om);
+        player = MediaPlayer.create(ShreeRamMantra.this, R.raw.shriramjayram);
         seekBar.setMax(0);
         seekBar.setMax(player.getDuration());
         yourEditText = (EditText) findViewById(R.id.textView16);
@@ -199,7 +202,6 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
                     repeatButton1.setEnabled(false);
                     repeatButton2.setEnabled(false);
 
-
                     seekBar.setMax(player.getDuration());
 
 
@@ -216,6 +218,7 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
                     yourEditText.setEnabled(false);
                     repeatButton.setEnabled(false);
                     repeatButton1.setEnabled(false);
+
                     repeatButton2.setEnabled(false);
 
 
@@ -225,7 +228,6 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
                 }
 
             });
-
 
             pauseButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -400,7 +402,7 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
         if (item.getItemId() == R.id.action_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.nandi.hanuman.chalisa";
+            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.github.niccokunzmann.hanumanchalisa";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }
@@ -479,5 +481,6 @@ public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedList
         Resources resources = context.getResources();
         ActivityRecreationHelper.recreate(this, true);
     }
+
 }
 

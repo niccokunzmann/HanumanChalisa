@@ -1,12 +1,9 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -14,9 +11,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
@@ -34,13 +28,15 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
-import com.nandi.hanuman.chalisa.fragments.SecondFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
 
 import java.io.IOException;
-import java.util.Locale;
 
-public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPreparedListener {
+/**
+ * RadhaKrishna
+ */
+
+public class OmMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
     private ImageButton playButton;
     private ImageButton pauseButton;
     private ImageButton stopButton;
@@ -68,19 +64,13 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
     int maxCount = 1;
     int finalValue = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-
-
-        drawableID = MainFragment.HANUMAN_JI;
-        mantraText = getResources().getString(R.string.my_mantra_new3);
-
+        drawableID = MainFragment.GAYATRI_MANTRA;
+        mantraText = getResources().getString(R.string.my_mantra_new2);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);
@@ -118,9 +108,7 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         tabs.setupWithViewPager(mViewPager);
 //        animat();
 
-
-        player = new MediaPlayer();
-        player = MediaPlayer.create(HanumanChalisa.this, R.raw.hanumanchalisa);
+        player = MediaPlayer.create(OmMantra.this, R.raw.om);
         seekBar.setMax(0);
         seekBar.setMax(player.getDuration());
         yourEditText = (EditText) findViewById(R.id.textView16);
@@ -177,19 +165,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
 
                 }
             });
-
-            pauseButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-
-                    if (player.isPlaying()) {
-                        flag1 = true;
-                        player.pause();
-
-                    }
-
-                }
-            });
-
             repeatButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
 
@@ -241,7 +216,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
                     yourEditText.setEnabled(false);
                     repeatButton.setEnabled(false);
                     repeatButton1.setEnabled(false);
-
                     repeatButton2.setEnabled(false);
 
 
@@ -250,6 +224,19 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
 
                 }
 
+            });
+
+
+            pauseButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+
+                    if (player.isPlaying()) {
+                        flag1 = true;
+                        player.pause();
+
+                    }
+
+                }
             });
 
             stopButton.setOnClickListener(new View.OnClickListener() {
@@ -339,11 +326,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
 
     @Override
     public void onPrepared(MediaPlayer mediaPlayer) {
@@ -397,39 +379,6 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
 
     }
 
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            if (position == 0) {
-                return MainFragment.newInstance(R.drawable.hanuman_1);
-            } else {
-                return SecondFragment.newInstance(getResources().getString(R.string.my_mantra_new));
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return 2;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Active";
-                case 1:
-                    return "All";
-            }
-            return null;
-        }
-    }
-
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
@@ -451,7 +400,7 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         if (item.getItemId() == R.id.action_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.nandi.hanuman.chalisa";
+            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.github.niccokunzmann.hanumanchalisa";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }
@@ -530,7 +479,5 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         Resources resources = context.getResources();
         ActivityRecreationHelper.recreate(this, true);
     }
-
 }
-
 

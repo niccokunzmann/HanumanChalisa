@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,7 +21,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,7 +28,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
 
 import java.io.IOException;
 
@@ -37,7 +36,8 @@ import java.io.IOException;
  * RadhaKrishna
  */
 
-public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
+public class HanumanMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
+
     private ImageButton playButton;
     private ImageButton pauseButton;
     private ImageButton stopButton;
@@ -70,9 +70,8 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
 
-
-        drawableID = MainFragment.KUBERA_JI;
-        mantraText = getResources().getString(R.string.my_mantra_new5);
+        drawableID = MainFragment.GANESH_JI;
+        mantraText = getResources().getString(R.string.my_mantra_new);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);
@@ -111,7 +110,7 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
         tabs.setupWithViewPager(mViewPager);
 //        animat();
 
-        player = MediaPlayer.create(ShreeRamMantra.this, R.raw.shriramjayram);
+        player = MediaPlayer.create(HanumanMantra.this, R.raw.maruthanandana);
         seekBar.setMax(0);
         seekBar.setMax(player.getDuration());
         yourEditText = (EditText) findViewById(R.id.textView16);
@@ -202,6 +201,7 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
                     repeatButton1.setEnabled(false);
                     repeatButton2.setEnabled(false);
 
+
                     seekBar.setMax(player.getDuration());
 
 
@@ -228,6 +228,7 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
                 }
 
             });
+
 
             pauseButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -378,7 +379,6 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
         flag = true;
         player.release();
         finish();
-
     }
 
     @Override
@@ -402,7 +402,7 @@ public class ShreeRamMantra extends BaseActivity implements MediaPlayer.OnPrepar
         if (item.getItemId() == R.id.action_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.nandi.hanuman.chalisa";
+            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.github.niccokunzmann.hanumanchalisa";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }

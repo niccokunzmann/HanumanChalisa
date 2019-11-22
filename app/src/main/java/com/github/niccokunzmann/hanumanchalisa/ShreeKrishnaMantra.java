@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa;
+package com.github.niccokunzmann.hanumanchalisa;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -23,15 +23,11 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.nandi.hanuman.chalisa.fragments.MainFragment;
+import com.github.niccokunzmann.hanumanchalisa.fragments.MainFragment;
 
 import java.io.IOException;
 
-/**
- * RadhaKrishna
- */
-
-public class ShaniMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
+public class ShreeKrishnaMantra extends BaseActivity implements MediaPlayer.OnPreparedListener {
 
     private ImageButton playButton;
     private ImageButton pauseButton;
@@ -61,15 +57,13 @@ public class ShaniMantra extends BaseActivity implements MediaPlayer.OnPreparedL
     int maxCount = 1;
     int finalValue = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ganeshamantra_demo);
 
-
-        drawableID = MainFragment.SHANI_DEV;
-        mantraText = getResources().getString(R.string.my_mantra_new9);
+        drawableID = MainFragment.KRISHAN_JI;
+        mantraText = getResources().getString(R.string.my_mantra_new10);
 
         playButton = (ImageButton) findViewById(R.id.btn1);
         pauseButton = (ImageButton) findViewById(R.id.btn2);
@@ -105,7 +99,7 @@ public class ShaniMantra extends BaseActivity implements MediaPlayer.OnPreparedL
         tabs.setupWithViewPager(mViewPager);
         animat();
 
-        player = MediaPlayer.create(ShaniMantra.this, R.raw.hanumanchalisa);
+        player = MediaPlayer.create(ShreeKrishnaMantra.this, R.raw.hanumanchalisa);
         seekBar.setMax(0);
         seekBar.setMax(player.getDuration());
         yourEditText = (EditText) findViewById(R.id.textView16);

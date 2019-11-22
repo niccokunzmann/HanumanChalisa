@@ -1,4 +1,4 @@
-package com.nandi.hanuman.chalisa.fragments;
+package com.github.niccokunzmann.hanumanchalisa.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.nandi.hanuman.chalisa.R;
+import com.github.niccokunzmann.hanumanchalisa.R;
 
 
 public class MainFragment extends Fragment {
