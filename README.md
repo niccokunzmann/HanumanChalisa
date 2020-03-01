@@ -8,7 +8,7 @@ https://github.com/bumptech/glide
 ## License
 
 
-HanumanChalisa Copyright (C) 2019  Nicco Kunzmann
+HanumanChalisa Copyright (C) 2019  Nicco Kunzmann  
 HanumanChalisa Copyright (c) 2018 Bhagavad Gita
 
 This program is free software: you can redistribute it and/or modify
