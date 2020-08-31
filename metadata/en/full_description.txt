@@ -1,0 +1,5 @@
+This app contains famous prayers in text and voice of the Hanuman Chalisa.
+You can listen to the mantras repeatedly, view pictures and read the text.
+
+It is a relatively simple app. Beginners are welcome to contribute.
+This is an ad-free and tracker-free version.

@@ -1,4 +1,0 @@
-This app provides a variety of mantras to listen to.
-They can be repeated and you can read their text.
-
-This version is an ad-free, tracker-free version of that one on Google Play.
