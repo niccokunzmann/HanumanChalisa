@@ -11,7 +11,7 @@
 
     android:background="@drawable/hanuman"
     android:alpha="1"
-    tools:context="com.nandi.hanuman.chalisa.MainActivity">
+    tools:context="com.github.niccokunzmann.hanumanchalisa.MainActivity">
     <RelativeLayout
         android:id="@+id/mantra1"
         android:layout_width="match_parent"

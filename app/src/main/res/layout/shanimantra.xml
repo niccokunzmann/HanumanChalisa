@@ -13,7 +13,7 @@
 
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    tools:context="com.nandi.hanuman.chalisa.MainActivity">
+    tools:context="com.github.niccokunzmann.hanumanchalisa.MainActivity">
 
     <RelativeLayout
         android:id="@+id/mantra1"
