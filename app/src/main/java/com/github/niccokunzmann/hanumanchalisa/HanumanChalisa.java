@@ -451,7 +451,7 @@ public class HanumanChalisa extends BaseActivity implements MediaPlayer.OnPrepar
         if (item.getItemId() == R.id.action_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://play.google.com/store/apps/details?id=com.github.niccokunzmann.hanumanchalisa";
+            String shareBody = "Hey! Check out this awesome Hanuman Chalisa app - https://f-droid.org/en/packages/com.github.niccokunzmann.hanumanchalisa/";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }
