@@ -1,6 +1,10 @@
 # HanumanChalisa
 Hanuman Chalisa android app.
 
+You can start developing it using Android Studio.
+
+[![](images/fdroid.png)](https://f-droid.org/en/packages/com.github.niccokunzmann.hanumanchalisa/)
+
 ## Software Material List
 
 https://github.com/bumptech/glide
